@@ -8,6 +8,8 @@ import './Navbar.css';
 import HomePage from '../../Pages/home';
 import SecondPage from '../../Pages/secondPage';
 
+
+
 function Navibar() {
     return (
         <div>
@@ -33,6 +35,7 @@ function Navibar() {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+
             <div>
                 <Switch>
                     <Route exact path='/' component={HomePage}/>
