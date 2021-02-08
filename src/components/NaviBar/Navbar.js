@@ -7,8 +7,9 @@ import './Navbar.css';
 
 import HomePage from '../../Pages/home';
 import SecondPage from '../../Pages/secondPage';
+import ThirdPage from '../../Pages/thirdPage';
 
-
+import {AnimatePresence} from 'framer-motion';
 
 function Navibar() {
     return (
@@ -26,9 +27,9 @@ function Navibar() {
                                     Page2
                                 </span>    
                             </Nav.Link>
-                            <Nav.Link href="#link">
+                            <Nav.Link as={Link} to="/thirdPage">
                                 <span className='link'>
-                                    LINK
+                                    Page3
                                 </span>
                             </Nav.Link>
                         </Nav>
@@ -37,10 +38,13 @@ function Navibar() {
             </Navbar>
 
             <div>
-                <Switch>
-                    <Route exact path='/' component={HomePage}/>
-                    <Route path='/secondPage' component={SecondPage} />
-                </Switch>
+                <AnimatePresence>
+                    <Switch>
+                        <Route exact path='/' component={HomePage}/>
+                        <Route path='/secondPage' component={SecondPage} />
+                        <Route path='/thirdPage' component={ThirdPage} />
+                    </Switch>
+                </AnimatePresence>
             </div>
         </div>
     )
