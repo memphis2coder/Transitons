@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
+
 import { motion } from "framer-motion"
+
 import styled from 'styled-components'
 
 import Container from 'react-bootstrap/Container';
@@ -12,9 +14,19 @@ function HomePage() {
             <Container>
                 <Row>
                     <Col>
-                        <motion.div>
+                        <motion.div 
+                            exit={{opacity: 0}}
+                            animate={{opacity: 1}}
+                            initial={{opacity: 0}}    
+                        >
                             <h1>Home Page</h1>
-                            <p>Lets animate transistions between react router routes with framer motion</p>
+                            <motion.p
+                                initial={{opacity: 0, y:10}}
+                                animate={{ opacity: 1, y:0 }}
+                                transition={{duration: 1}}
+                            >
+                                Lets animate transistions between react router routes with framer motion
+                            </motion.p>
                         </motion.div>
                     </Col>
                 </Row>
