@@ -1,7 +1,7 @@
 import React from 'react';
-
+//Motion
 import {motion} from 'framer-motion';
-
+//Styles
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
