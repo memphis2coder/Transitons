@@ -14,7 +14,7 @@ import {AnimatePresence} from 'framer-motion';
 function Navibar() {
     return (
         <div>
-            <Navbar bg="none" expand="lg">
+            <Navbar expand="lg" bg="white">
                 <Container>
                     <Navbar.Brand as={Link} to='/'>
                         <span className="brandLogo">Transitions</span>
