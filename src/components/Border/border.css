@@ -1,0 +1,11 @@
+#border {
+ height: 800px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.border-container {
+    box-shadow: 0 0 0 13px white;
+    border-radius: 10px;
+    height: 600px;
+}

@@ -15,11 +15,11 @@ import One from '../../images/01/01';
 function Jumbo() {
     const PositionRight = styled.div `
         position: absolute;
-        top: 50px;
-        right: 300px;
+        top: 70px;
+        right: 250px;
         @media (max-width: 768px) {
             right: 0px;
-            top: 100px;
+            top: 120px;
         }
     `
 
@@ -85,9 +85,9 @@ function Jumbo() {
                             </motion.ul>
                             
                         </Col>
-                        <Col md={1} xs={6}>
+                        {/* <Col md={1} xs={6}>
                             <Arrow/>
-                        </Col>
+                        </Col> */}
                     </Row>
                 </Container>
                 
