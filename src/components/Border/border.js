@@ -17,7 +17,7 @@ import './border.css';
 export default function Border() {
     const PositionRight = styled.div `
         position: absolute;
-        top: -200px;
+        top: 80px;
         right: -50px;
         z-index: -10;
         @media (max-width: 768px) {
@@ -26,14 +26,9 @@ export default function Border() {
         }
     `
     return (
-        <section id="border">
+        <section id="border" className="py-5">
             <Container>
-                <motion.div 
-                    className="border-container"
-                    initial={{width: "0"}}
-                    animate={{width: '100%'}}
-                    transition={{duration: 1}}   
-                >
+                <div className="border-container py-5">
                 {/** Everything will be inside this border-container */}
                     <Col>
                         <Row>
@@ -50,50 +45,37 @@ export default function Border() {
                         </Row>
                         {/** first row */}
                         <Row>
-                            <Col>
-                                {/* <span>
-                                    <h2>TECHNOLOGY & MARKETING BECOME ONE.</h2>
-                                </span> */}
+                            <Col sm={12} md={4}>
+                                <h3 className="text-left">TECHNOLOGY & MARKETING BECOME ONE.</h3>
+                                <p className="text-left" ><strong>Technology has transformed marketing</strong> by making campaigns more personalized and immersive for people.</p>
+                            </Col>
+                            <Col sm={12} md={4}>
+                                <Image src={techPic} alt="pic" className="border-pic" fluid/>
+                            </Col>  
+                            <Col sm={12} md={4}>
+                                <Row>
+                                    <Col className="text-left">
+                                        <h5>01. DISCUSS</h5>
+                                        <p>lorem10</p>
+
+                                        <h5>02. RESEARCH</h5>
+                                        <p>lorem10</p>
+
+                                        <h5>02. RESEARCH</h5>
+                                        <p>lorem10</p>
+                                    </Col>
+                                </Row>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col sm={12} md={12}>
                                 <div className="image-container">
-                                    <Image src={techPic} alt="pic" fluid/>
+                                    
                                 </div>
                             </Col>
-                            <Col>
-                                <Row>
-                                    <Col>
-                                        <h4>01. DISCUSS</h4>
-                                        <p>lorem10</p>
-                                    </Col>
-                                    <Col>
-                                        <h4>02. RESEARCH</h4>
-                                        <p>lorem10</p>
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col>
-                                        <h4>03. CONCEPT</h4>
-                                        <p>lorem10</p>
-                                    </Col>
-                                    <Col>
-                                        <h4>04. IMPLEMENTATION</h4>
-                                        <p>lorem10</p>
-                                    </Col>
-                                </Row>
-                            </Col>
-                        </Row>
-                        {/* * second row
-                        <Row>
-                            <Col>col 1</Col>
-                            <Col>col 2</Col>
-                        </Row>
-                        {/** third row */}
-                        {/* <Row>
-                            <Col>col 1</Col>
-                            <Col>col 2</Col>
-                        </Row> */} 
+                        </Row>    
                     </Col>
-
-                </motion.div>
+                </div>
             </Container>
         </section>
     )

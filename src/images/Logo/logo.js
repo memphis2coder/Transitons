@@ -11,7 +11,7 @@ function Logo() {
     `
     return (
         <div>
-            <Logo>B</Logo>
+            <Logo>b</Logo>
         </div>
     )
 };
