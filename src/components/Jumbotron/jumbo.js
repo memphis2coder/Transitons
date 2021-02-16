@@ -28,7 +28,15 @@ function Jumbo() {
             <Jumbotron fluid className="jumbotron-custom " >
                 {/* This is the overlay backgroud image */}
                 <PositionRight>
-                    <One />
+                <motion.div
+                    exit={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0 }}
+                    transition={{ duration: 1.3 }}
+                >
+                <One />
+                </motion.div>
+                    
                 </PositionRight>
                 {/** First Row */}
                 <Row>

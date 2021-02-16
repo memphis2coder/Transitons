@@ -9,6 +9,7 @@
     "bootstrap": "^4.6.0",
     "framer": "^1.2.18",
     "framer-motion": "^3.3.0",
+    "hamburger-react": "^2.4.0",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",

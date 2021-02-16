@@ -3,6 +3,10 @@
     color: green;
 }
 
+.toggle-icon {
+    border: none;
+}
+
 .link {
     font-size: 20px;
 }

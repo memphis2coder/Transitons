@@ -17,6 +17,7 @@ function HomePage() {
     return (
         <div>
             <Jumbo/>
+            {/** Fade = reveal on scroll style */}
                 <Fade bottom>
                     <Border/>
                 </Fade>

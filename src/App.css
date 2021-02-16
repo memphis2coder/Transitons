@@ -1,6 +1,10 @@
 .App {
   text-align: center;
-  background-color: #E9ECEF;
+  background-color: #f7f9fc;
   height: 100%;
+}
+
+p {
+  font-size: 18px;
 }
 
