@@ -1,6 +1,6 @@
 .jumbotron-custom {
     background-color: white;
-    height: 730px;
+    height: 100vh;
     display:flex;
     flex-direction: column;
     justify-content: space-around;

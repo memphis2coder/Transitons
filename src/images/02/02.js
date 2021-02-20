@@ -4,9 +4,9 @@ import styled from 'styled-components';
 function Two() {
     const StyledNumber = styled.h1`
         font-size: 350px;
-        opacity: 0.4;
-        color: lightgray;
-        z-index: -10;
+        opacity: 0.1;
+        color: black;
+        /* z-index: 10; */
         @media (max-width: 768px) {
             font-size: 250px;
         }

@@ -1,26 +1,54 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 //Motion
-import { motion } from "framer-motion"
+import { motion , useAnimation } from "framer-motion"
 //Styles
-import Fade from 'react-reveal/Fade'
-// import './home.css';
-// import styled from 'styled-components'
-// import Container from 'react-bootstrap/Container';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
-// import Jumbotron from 'react-bootstrap/Jumbotron';
+import "../App.css";
+import Fade from 'react-reveal/Fade';
+import {useInView} from 'react-intersection-observer';
+
 //Components
 import Jumbo from '../components/Jumbotron/jumbo';
-import Border from '../components/Border/border';
+
+import Section2 from '../components/Section2/section2';
 
 function HomePage() {
+    const controls = useAnimation();
+    const {ref, inView} = useInView();
+
+    const boxVariants = {
+        hidden: {scale: 0 },
+        visible: {
+            scale: 1,
+            transition: {
+                duration: 0.5
+            }
+        }
+    };
+
+    useEffect(() => {
+        if (inView) {
+            controls.start('visible');
+        }
+        if (!inView) {
+            controls.start('hidden')
+        }
+    }, [controls, inView])
+
     return (
         <div>
             <Jumbo/>
             {/** Fade = reveal on scroll style */}
-                <Fade bottom>
-                    <Border/>
-                </Fade>
+                {/* <Fade bottom>
+                    <Section2/>
+                </Fade> */}
+                <motion.div
+                    className="box"  
+                    ref={ref} 
+                    initial="hidden" 
+                    animate={controls} 
+                    variants={boxVariants}>
+                    <Section2/>
+                </motion.div>
         </div>
     )
 };

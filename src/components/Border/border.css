@@ -1,10 +1,23 @@
-/* #border {
- min-height: 800px;
-} */
+#border {
+    background-color: #f7f9fc;
+    height: 100vh;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
 
 .border-container {
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.white-bg{
+    background-color: white;
+    height: 100%;
+}
+
+.border-title {
+    font-weight: bold;
 }
 

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 //Motion
-import { motion } from "framer-motion"
+import { motion , useAnimation } from "framer-motion"
+import {useInView} from 'react-intersection-observer';
 //Styles
 import './jumbo.css';
 import styled from 'styled-components';
@@ -13,6 +14,28 @@ import Arrow from '../../images/arrow/arrow';
 import One from '../../images/01/01';
 
 function Jumbo() {
+    const controls = useAnimation();
+    const {ref, inView} = useInView();
+    
+    const scaleVariants = {
+        hidden: {scale: 0 },
+        visible: {
+            scale: 1,
+            transition: {
+                duration: 0.5
+            }
+        }
+    };
+
+    useEffect(() => {
+        if (inView) {
+            controls.start('visible');
+        }
+        if (!inView) {
+            controls.start('hidden')
+        }
+    }, [controls, inView])
+
     const PositionRight = styled.div `
         position: absolute;
         top: 70px;
