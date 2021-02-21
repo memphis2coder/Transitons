@@ -14,27 +14,27 @@ import Arrow from '../../images/arrow/arrow';
 import One from '../../images/01/01';
 
 function Jumbo() {
-    const controls = useAnimation();
-    const {ref, inView} = useInView();
+    // const controls = useAnimation();
+    // const {ref, inView} = useInView();
     
-    const scaleVariants = {
-        hidden: {scale: 0 },
-        visible: {
-            scale: 1,
-            transition: {
-                duration: 0.5
-            }
-        }
-    };
+    // const scaleVariants = {
+    //     hidden: {scale: 0 },
+    //     visible: {
+    //         scale: 1,
+    //         transition: {
+    //             duration: 0.5
+    //         }
+    //     }
+    // };
 
-    useEffect(() => {
-        if (inView) {
-            controls.start('visible');
-        }
-        if (!inView) {
-            controls.start('hidden')
-        }
-    }, [controls, inView])
+    // useEffect(() => {
+    //     if (inView) {
+    //         controls.start('visible');
+    //     }
+    //     if (!inView) {
+    //         controls.start('hidden')
+    //     }
+    // }, [controls, inView])
 
     const PositionRight = styled.div `
         position: absolute;
@@ -51,15 +51,14 @@ function Jumbo() {
             <Jumbotron fluid className="jumbotron-custom " >
                 {/* This is the overlay backgroud image */}
                 <PositionRight>
-                <motion.div
-                    exit={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    initial={{ opacity: 0 }}
-                    transition={{ duration: 1.3 }}
-                >
-                <One />
-                </motion.div>
-                    
+                    <motion.div
+                        exit={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        initial={{ opacity: 0 }}
+                        transition={{ duration: 1.3 }}
+                    >
+                        <One />
+                    </motion.div>
                 </PositionRight>
                 {/** First Row */}
                 <Row>

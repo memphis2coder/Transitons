@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
+
 .App {
   text-align: center;
   /* background-color: #f7f9fc; */
   height: 100%;
 }
 
+h1,h2,h3,h4 {
+  font-family: 'Roboto', sans-serif;
+}
+
 p {
   font-size: 18px;
+  font-family: 'Open Sans',serif;
 }
