@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 //Motion
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation} from "framer-motion";
+import {Frame} from 'framer';
 import { useInView } from "react-intersection-observer";
 //Styles
 import "./section2.css";
@@ -11,6 +12,8 @@ import Col from "react-bootstrap/Col";
 import Image from 'react-bootstrap/Image';
 //Images
 import Marketing1 from '../../images/tech&market/marketing1.jpg';
+import Marketing2 from '../../images/tech&market/marketing2.jpg';
+import Marketing3 from '../../images/tech&market/marketing3.jpg';
 
 
 
@@ -23,6 +26,18 @@ export default function Section2() {
         visible: { opacity: 1, y: 0 },
     };
 
+    const pictureVariants = {
+        hidden: {opacity: 0},
+        visible: {opacity: 1},
+        originX: 0.5
+    };
+
+    const spring = {
+        type: "spring",
+        damping: 10,
+        stiffness: 100
+    }
+
     useEffect(() => { 
         if (inView) {
             controls.start("visible");
@@ -33,8 +48,8 @@ export default function Section2() {
     }, [controls, inView]);
 
     return (
-        <div id="section2">
-            <Container fluid>
+        <div >
+            <Container id="section2">
                 <Row>
                     {/* <motion.div
                         ref={ref}
@@ -77,8 +92,9 @@ export default function Section2() {
                             initial="hidden"
                             animate={controls}
                             variants={titleVariants}
+                            
                             transition={{ duration: 1, delay: 0.8 }}
-                            className="section-text text-left pt-2 width-75"
+                            className="section-text text-left pt-2"
                         >
                             Aesthetics, visual perfection, and excellent style are the
                             emotional pieces, that will make one's heart beat faster and pay
@@ -86,7 +102,7 @@ export default function Section2() {
                             customers and make them loyal—give them emotions, which they need.
                             It will keep users scrolling and getting engaged.
                         </motion.p>
-                        <motion.h4
+                        {/* <motion.h4
                             ref={ref}
                             initial="hidden"
                             animate={controls}
@@ -95,8 +111,8 @@ export default function Section2() {
                             className="text-left pt-4 section-sub-title"
                         >
                             <strong>VISUAL BRAND</strong>
-                        </motion.h4>
-                        <motion.p
+                        </motion.h4> */}
+                        {/* <motion.p
                             ref={ref}
                             initial="hidden"
                             animate={controls}
@@ -108,26 +124,41 @@ export default function Section2() {
                             everything is nice and fashionable, but absolutely impossible to
                             use. That is why the first thing we pay attention to is how the
                             visual ideas we bring will work for a particular brand.
-                        </motion.p>
+                        </motion.p> */}
                     </Col>
                     {/* </motion.div> */}
 
-                    <Col sm={12} md={6} className="section2-col2 photo-grid"> {/** second column */  }
+                    <Col sm={12} md={6} className="section2-col2"> {/** second column */  }
                         <Row>
-                            <span sm={12} md={12} className="box-1 box">
-                                <Image src={Marketing1} fluid/>
-                            </span>
+                            <motion.div 
+                                // initial="hidden"
+                                // visible="visible"
+                                // // animate={controls}
+                                // variants={pictureVariants}
+                                
+                            >
+                                
+                                <Image src={Marketing3} fluid/>
+                                
+                                
+                            </motion.div>
                         </Row>
-                        <Row>
-                            <Col>
-                                <span sm={12} md={6} className="box-2 box">asdf</span>
+                    </Col>
+                    {/* <Col> */}
+                    {/* <Row>
+                            <Col sm={12} md={6}>
+                                <span className="box-2 box">
+                                    <Image src={Marketing2} fluid/>
+                                </span>
                             </Col>
-                            <Col>
-                                <span sm={12} md={6} className="box-3 box">asdfsf</span>
+                            <Col sm={12} md={6}>
+                                <span className="box-3 box">
+                                <Image src={Marketing3} fluid/>
+                                </span>
                             </Col>
                             
                         </Row>
-                    </Col>
+                    </Col> */}
                 </Row>
             </Container>
         </div>
