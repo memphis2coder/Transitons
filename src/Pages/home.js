@@ -8,8 +8,8 @@ import {useInView} from 'react-intersection-observer';
 
 //Components
 import Jumbo from '../components/Jumbotron/jumbo';
-
 import Section2 from '../components/Section2/section2';
+import Section3 from '../components/Section3/section3';
 
 function HomePage() {
     const controls = useAnimation();
@@ -36,7 +36,7 @@ function HomePage() {
 
     return (
         <div>
-            <Jumbo/>
+            {/* <Jumbo/> */}
             {/** Fade = reveal on scroll style */}
                 {/* <Fade bottom>
                     <Section2/>
@@ -47,8 +47,10 @@ function HomePage() {
                     initial="hidden" 
                     animate={controls} 
                     variants={boxVariants}>
-                    <Section2/>
+                    {/* <Section2/>
+                    <Section3/> */}
                 </motion.div>
+                
         </div>
     )
 };

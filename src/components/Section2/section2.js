@@ -14,6 +14,7 @@ import Image from 'react-bootstrap/Image';
 import Marketing1 from '../../images/tech&market/marketing1.jpg';
 import Marketing2 from '../../images/tech&market/marketing2.jpg';
 import Marketing3 from '../../images/tech&market/marketing3.jpg';
+import One from '../../images/01/01';
 
 
 
@@ -25,18 +26,10 @@ export default function Section2() {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0 },
     };
-
     const pictureVariants = {
-        hidden: {opacity: 0},
-        visible: {opacity: 1},
-        originX: 0.5
+        hidden: {scale: 0},
+        visible: {scale: 1},
     };
-
-    const spring = {
-        type: "spring",
-        damping: 10,
-        stiffness: 100
-    }
 
     useEffect(() => { 
         if (inView) {
@@ -48,16 +41,9 @@ export default function Section2() {
     }, [controls, inView]);
 
     return (
-        <div >
+        <div>
             <Container id="section2">
                 <Row>
-                    {/* <motion.div
-                        ref={ref}
-                        variants={scaleVariants}
-                        initial='hidden'
-                        animate={controls}
-                        transition={{duration: 1.3}}
-                    > */}
                     <Col
                         sm={12}
                         md={6}
@@ -94,7 +80,7 @@ export default function Section2() {
                             variants={titleVariants}
                             
                             transition={{ duration: 1, delay: 0.8 }}
-                            className="section-text text-left pt-2"
+                            className="section-text text-left pt-2 width-75"
                         >
                             Aesthetics, visual perfection, and excellent style are the
                             emotional pieces, that will make one's heart beat faster and pay
@@ -102,63 +88,21 @@ export default function Section2() {
                             customers and make them loyal—give them emotions, which they need.
                             It will keep users scrolling and getting engaged.
                         </motion.p>
-                        {/* <motion.h4
-                            ref={ref}
-                            initial="hidden"
-                            animate={controls}
-                            variants={titleVariants}
-                            transition={{ duration: 1, delay: 1.3 }}
-                            className="text-left pt-4 section-sub-title"
-                        >
-                            <strong>VISUAL BRAND</strong>
-                        </motion.h4> */}
-                        {/* <motion.p
-                            ref={ref}
-                            initial="hidden"
-                            animate={controls}
-                            variants={titleVariants}
-                            transition={{ duration: 1, delay: 1.3 }}
-                            className="section-text text-left pt-2 width-75"
-                        >
-                            What is the main problem with branding? It often happens, that
-                            everything is nice and fashionable, but absolutely impossible to
-                            use. That is why the first thing we pay attention to is how the
-                            visual ideas we bring will work for a particular brand.
-                        </motion.p> */}
                     </Col>
-                    {/* </motion.div> */}
-
+                    
                     <Col sm={12} md={6} className="section2-col2"> {/** second column */  }
                         <Row>
                             <motion.div 
-                                // initial="hidden"
-                                // visible="visible"
-                                // // animate={controls}
-                                // variants={pictureVariants}
-                                
+                                ref={ref}
+                                variants={pictureVariants}
+                                // animate={controls}
+                                animate={controls}
+                                transition={{ duration: 1, delay: 0.3 }}
                             >
-                                
-                                <Image src={Marketing3} fluid/>
-                                
-                                
+                                <Image src={Marketing3} className="section2-col2-image" fluid/>
                             </motion.div>
                         </Row>
                     </Col>
-                    {/* <Col> */}
-                    {/* <Row>
-                            <Col sm={12} md={6}>
-                                <span className="box-2 box">
-                                    <Image src={Marketing2} fluid/>
-                                </span>
-                            </Col>
-                            <Col sm={12} md={6}>
-                                <span className="box-3 box">
-                                <Image src={Marketing3} fluid/>
-                                </span>
-                            </Col>
-                            
-                        </Row>
-                    </Col> */}
                 </Row>
             </Container>
         </div>
